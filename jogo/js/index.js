@@ -23,6 +23,25 @@ async function buscarPalavras() {
 		console.error(error);
 	}
 }
+async function salvarPartida() {
+	try {
+		const response = await fetch(`${url}/api/salvar_partida.php`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({ Nome: "Cléber", tempo: 120, tentativas: 100 })
+		});
+		if (!response.ok) {
+			const errorBody = await response.json();
+			throw new Error(`ERRO ${response.status}: ${errorBody.error}`);
+		}
+		const data = await response.json();
+		console.log(data);
+	} catch (error) {
+		console.error(error);
+	}
+}
 
 function iniciar() {
 	let embaralhadas = embaralhar([...palavras, ...palavras]);
@@ -71,4 +90,4 @@ function embaralhar(array) {
 	return array;
 }
 
-btnReiniciar.onclick = () => buscarPalavras();
+btnReiniciar.onclick = () => buscarPalavras(); 
