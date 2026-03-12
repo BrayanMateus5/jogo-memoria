@@ -1,5 +1,21 @@
+:root {
+	--bg: linear-gradient(135deg, #ffa216, #9e9999);
+
+	--bg button {
+		background: #120f12;
+	}
+}
+
+body[data-theme="dark"] {
+	--bg: linear-gradient(135deg, #915603, #000000);
+
+	--bg button {
+		background: #cbc9c9;
+	}
+}
+
 body {
-	background: linear-gradient(135deg, #94568d, #800080);
+	background: var(--bg);
 	min-height: 100vh;
 	margin: 0;
 	display: flex;
@@ -23,7 +39,7 @@ header {
 button {
 	border: none;
 	cursor: pointer;
-	background: #94568d;
+	background: #c0760e;
 	font-weight: bold;
 	padding: 10px 20px;
 	border-radius: 5px;
@@ -33,7 +49,7 @@ button {
 }
 
 button:hover {
-	background: #800080;
+	background: #7d5b29;
 	box-shadow: 0 4px 8px #94568d;
 }
 
@@ -48,11 +64,11 @@ button:hover {
 }
 
 .card.selecionado {
-	background: #800080;
+	background: #dd1a1a;
 }
 
 .cinza {
-	color: #333030;
+	color: #000000;
 }
 
 .negrito {

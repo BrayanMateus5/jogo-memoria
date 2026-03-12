@@ -9,6 +9,15 @@ let tentativas = 0;
 
 
 buscarPalavras();
+salvarPartida();
+
+
+function alterarTema() {
+	let tema = localStorage.getItem("tema") || "light";
+	tema = tema == 'light' ? 'dark' : 'light';
+	document.body.dataset.theme = tema;
+	localStorage.setItem("tema", tema);
+}
 
 async function buscarPalavras() {
 	try {
